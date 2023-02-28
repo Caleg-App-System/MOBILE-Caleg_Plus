@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SiCaleg</string>
+    <string name="app_name">CalegPlus</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">LOGIN</string>
@@ -15,4 +15,27 @@
     <string name="inputEmail">Masukkan Email</string>
     <string name="role">Registrasi Sebagai</string>
     <string name="sudahPunyaAkun">Sudah Mempunyai Akun?</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="kabupaten">Kabupaten</string>
+    <string name="kecamatan">Kecamatan</string>
+
+    <string-array name="role">
+        <item name="caleg">Caleg</item>
+        <item name="koordinator desa">Koordinator Desa</item>
+    </string-array>
+
+    <string-array name="provinsi">
+        <item name="jawa tengah">Jawa Tengah</item>
+        <item name="jawa barat">Jawa Barat</item>
+    </string-array>
+
+    <string-array name="kabupaten">
+        <item name="banyumas">Banyumas</item>
+        <item name="banjarnegara">Banjarnegara</item>
+    </string-array>
+
+    <string-array name="kecamatan">
+        <item name="Banyumas">Banyumas</item>
+        <item name="Purwokerto">Purwokerto</item>
+    </string-array>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.sicaleg
+package com.example.calegplus
 
 import org.junit.Test
 

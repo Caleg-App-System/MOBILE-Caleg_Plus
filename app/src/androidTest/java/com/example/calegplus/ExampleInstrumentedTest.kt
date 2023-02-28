@@ -1,4 +1,4 @@
-package com.example.sicaleg
+package com.example.calegplus
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

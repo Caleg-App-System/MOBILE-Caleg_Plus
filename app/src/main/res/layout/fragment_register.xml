@@ -150,20 +150,66 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MyApp.TextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:hint="@string/role">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/role"
+                    <AutoCompleteTextView
+                        android:id="@+id/actvClass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/role"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:textColor="@color/black" />
+                        android:inputType="none"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/provinsi">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/provClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/kabupaten">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/kabClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/kecamatan">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/kecClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRegister"
@@ -192,7 +238,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/logIn"
+                        android:id="@+id/login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
