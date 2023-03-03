@@ -29,57 +29,62 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        viewModel.loginResult.observe(viewLifecycleOwner) {
-//            when (it) {
-//                is BaseResponse.Success -> {
-//                    processLogin(it.data)
-//                }
-//                is BaseResponse.Error -> {
-//                    processError(it.msg)
-//                }
-//                else -> {
-//                }
-//            }
-//        }
+        viewModel.loginResult.observe(viewLifecycleOwner) {
+            when (it) {
+                is BaseResponse.Success -> {
+                    processLogin(it.data)
+                }
+                is BaseResponse.Error -> {
+                    processError(it.msg)
+                }
+                else -> {
+                }
+            }
+        }
         binding.btnLogin.setOnClickListener {
             val username = binding.username.text.toString()
             val pwd = binding.password.text.toString()
-            if(username.isEmpty()){
+            if (username.isEmpty()) {
                 binding.username.error = "Username harus terisi"
             }
-            if(pwd.isEmpty()){
+            if (pwd.isEmpty()) {
                 binding.password.error = "Password harus terisi"
             }
-            if(pwd.length < 8){
+            if (pwd.length < 8) {
                 binding.password.error = "Password minimal 8 karakter"
             }
-            viewModel.auth(username, pwd)
-            viewModel.user.observe(viewLifecycleOwner){
-                if (it!= null) {
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-                } else {
-                    Toast.makeText(requireContext(), "Login Failed!", Toast.LENGTH_SHORT).show()
-                }
-            }
+            viewModel.loginUser(username = username, pwd = pwd)
         }
         binding.signUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
-//    fun processLogin(data: AuthResponse?) {
-//        showToast("Success:" + data?.message)
-//            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-//    }
-//
-//    fun processError(msg: String?) {
-//        showToast("Error:" + msg)
-//    }
-//
-//    fun showToast(msg: String) {
-//        Toast.makeText(
-//            requireContext(),
-//            msg,
-//            Toast.LENGTH_SHORT
-//        ).show()
-//    }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.getDataStoreIsLogin().observe(viewLifecycleOwner) {
+            if (it == true) {
+                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            }
+        }
+    }
+
+    fun processLogin(data: AuthResponse?) {
+        showToast("Success:" + data?.message)
+        viewModel.saveIsLoginStatus(true)
+        viewModel.saveUsername(data?.data?.user?.username.toString())
+        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+    }
+
+    fun processError(msg: String?) {
+        showToast("Error:" + msg)
+    }
+
+    fun showToast(msg: String) {
+        Toast.makeText(
+            requireContext(),
+            msg,
+            Toast.LENGTH_SHORT
+        ).show()
+    }
 }

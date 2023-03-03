@@ -11,4 +11,5 @@ class UserRepository @Inject constructor(private val apiHelper: ApiHelper) {
 
     suspend fun registerUser(registerRequest: RegisterRequest) =
         apiHelper.registerUser(registerRequest = registerRequest)
+
 }

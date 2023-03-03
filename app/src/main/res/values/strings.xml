@@ -11,22 +11,19 @@
     <string name="register">REGISTER</string>
     <string name="namaLengkap">Nama Lengkap</string>
     <string name="inputNamaLengkap">Masukkan Nama Lengkap</string>
-    <string name="inputCPassword">Konfirmasi Password</string>
+    <string name="inputCPassword">Ketikkan Ulang Password</string>
     <string name="inputEmail">Masukkan Email</string>
     <string name="role">Registrasi Sebagai</string>
     <string name="sudahPunyaAkun">Sudah Mempunyai Akun?</string>
     <string name="provinsi">Provinsi</string>
     <string name="kabupaten">Kabupaten</string>
     <string name="kecamatan">Kecamatan</string>
+    <string name="logout">Logout</string>
 
     <string-array name="role">
-        <item name="caleg">Caleg</item>
-        <item name="koordinator desa">Koordinator Desa</item>
-    </string-array>
-
-    <string-array name="provinsi">
-        <item name="jawa tengah">Jawa Tengah</item>
-        <item name="jawa barat">Jawa Barat</item>
+        <item name="caleg">CALEG</item>
+        <item name="koordinator desa">KOORDINATOR DESA</item>
+        <item name="saksi tps">SAKSI TPS</item>
     </string-array>
 
     <string-array name="kabupaten">

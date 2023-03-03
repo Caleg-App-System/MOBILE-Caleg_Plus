@@ -15,4 +15,5 @@ class ApiHelperImpl @Inject constructor(
 
     override suspend fun registerUser(registerRequest: RegisterRequest): Response<AuthResponse>? =
         apiService.registerUser(registerRequest = registerRequest)
+
 }

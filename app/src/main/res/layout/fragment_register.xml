@@ -70,6 +70,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="25dp">
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MyApp.TextInputLayout"
                     android:layout_width="match_parent"
@@ -82,9 +83,11 @@
                         android:hint="@string/inputNamaLengkap"
                         android:inputType="text"
                         android:maxLines="1"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MyApp.TextInputLayout"
                     android:layout_width="match_parent"
@@ -97,7 +100,8 @@
                         android:hint="@string/inputUsername"
                         android:inputType="text"
                         android:maxLines="1"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -114,7 +118,8 @@
                         android:hint="@string/inputPassword"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -130,7 +135,8 @@
                         android:hint="@string/inputCPassword"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -145,7 +151,8 @@
                         android:hint="@string/inputEmail"
                         android:inputType="text"
                         android:maxLines="1"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -160,55 +167,45 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
-                        />
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+
+                <Spinner
+                    android:id="@+id/provClass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/provinsi">
+                    android:layout_marginTop="5dp"
+                    android:background="#8ADADADA"
+                    android:padding="10dp" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/provClass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                <Spinner
+                    android:id="@+id/kabClass"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/kabupaten">
+                    android:layout_marginTop="5dp"
+                    android:background="#8ADADADA"
+                    android:padding="10dp" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/kabClass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                <Spinner
+                    android:id="@+id/kecClass"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/kecamatan">
+                    android:layout_marginTop="5dp"
+                    android:background="#8ADADADA"
+                    android:padding="10dp" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/kecClass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
+                <Spinner
+                    android:id="@+id/desaClass"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#8ADADADA"
+                    android:padding="10dp" />
 
 
                 <com.google.android.material.button.MaterialButton

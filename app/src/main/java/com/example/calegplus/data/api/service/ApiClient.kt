@@ -1,8 +1,11 @@
 package com.example.calegplus.data.api.service
 
+import android.content.Context
+import com.example.calegplus.DatastoreManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,7 +17,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object ApiClient {
 
-    val BASE_URL = "https://63f781f3e40e087c95908e55.mockapi.io"
+    val BASE_URL = "https://caleg-plus.up.railway.app"
 
     @Singleton
     @Provides
@@ -52,4 +55,8 @@ object ApiClient {
     fun provideApiHelper(apiHelper: ApiHelperImpl): ApiHelper {
         return apiHelper
     }
+
+    @Provides
+    fun getDatastoreManager(@ApplicationContext context: Context): DatastoreManager =
+        DatastoreManager(context)
 }
