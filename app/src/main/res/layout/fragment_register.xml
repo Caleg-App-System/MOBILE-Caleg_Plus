@@ -52,7 +52,7 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@drawable/logo" />
         </LinearLayout>
 
@@ -172,40 +172,107 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <Spinner
-                    android:id="@+id/provClass"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:background="#8ADADADA"
-                    android:padding="10dp" />
+                    android:padding="8dp">
 
-                <Spinner
-                    android:id="@+id/kabClass"
-                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#8ADADADA"
-                    android:padding="10dp" />
+                    <Spinner
+                        android:id="@+id/provClass"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="10dp" />
+                </RelativeLayout>
 
-                <Spinner
-                    android:id="@+id/kecClass"
-                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:background="#8ADADADA"
-                    android:padding="10dp" />
+                    android:padding="8dp">
 
-                <Spinner
-                    android:id="@+id/desaClass"
-                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    <Spinner
+                        android:id="@+id/kabClass"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="10dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:background="#8ADADADA"
-                    android:padding="10dp" />
+                    android:padding="8dp">
+
+                    <Spinner
+                        android:id="@+id/kecClass"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="10dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#8ADADADA"
+                    android:padding="8dp">
+
+                    <Spinner
+                        android:id="@+id/desaClass"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="10dp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MyApp.TextInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rt"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/inputRT"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MyApp.TextInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rw"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/inputRW"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
 
                 <com.google.android.material.button.MaterialButton

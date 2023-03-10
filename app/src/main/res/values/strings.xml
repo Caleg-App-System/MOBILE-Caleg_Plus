@@ -19,6 +19,8 @@
     <string name="kabupaten">Kabupaten</string>
     <string name="kecamatan">Kecamatan</string>
     <string name="logout">Logout</string>
+    <string name="inputRT">RT</string>
+    <string name="inputRW">RW</string>
 
     <string-array name="role">
         <item name="caleg">CALEG</item>
