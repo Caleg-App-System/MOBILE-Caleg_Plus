@@ -37,7 +37,7 @@ class LoginViewModel @Inject constructor (
                 if (response?.code() == 200) {
                     loginResult.value = BaseResponse.Success(response.body())
                 } else {
-                    loginResult.value = BaseResponse.Error(response?.message())
+                    loginResult.value = BaseResponse.Error(response?.errorBody()?.string())
                 }
 
             } catch (ex: Exception) {

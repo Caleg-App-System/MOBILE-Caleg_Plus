@@ -76,7 +76,7 @@ class RegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
             val email = binding.email.text.toString()
             val pwd = binding.password.text.toString()
             val address =
-                binding.desaClass.selectedItem.toString() + ", " + binding.kecClass.selectedItem.toString() + ", " + binding.kabClass.selectedItem.toString() + ", " + binding.provClass.selectedItem.toString()
+                "RT. " + binding.rt.text.toString()+ ", " + "RW. " + binding.rw.text.toString()+ ", " + binding.desaClass.selectedItem.toString() + ", " + binding.kecClass.selectedItem.toString() + ", " + binding.kabClass.selectedItem.toString() + ", " + binding.provClass.selectedItem.toString()
             val role = binding.actvClass.text.toString()
             val confPwd = binding.cPassword.text.toString()
 
@@ -242,7 +242,7 @@ class RegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     fun processError(msg: String?) {
-        showToast("Error:" + msg)
+        showToast("$msg")
     }
 
     fun showToast(msg: String) {

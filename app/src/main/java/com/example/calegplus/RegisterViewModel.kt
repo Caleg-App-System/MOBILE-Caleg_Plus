@@ -42,7 +42,7 @@ class RegisterViewModel @Inject constructor(
                 if (response?.code() == 201) {
                     registerResult.value = BaseResponse.Success(response.body())
                 } else {
-                    registerResult.value = BaseResponse.Error(response?.message())
+                    registerResult.value = BaseResponse.Error(response?.errorBody()?.string())
                 }
 
             } catch (ex: Exception) {

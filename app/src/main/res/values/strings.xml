@@ -21,6 +21,16 @@
     <string name="logout">Logout</string>
     <string name="inputRT">RT</string>
     <string name="inputRW">RW</string>
+    <string name="username_profile">Username</string>
+    <string name="edit">Edit</string>
+    <string name="profile">Profile</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="address_profile">Address</string>
+    <string name="no_hp_profile">No. Hp</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="select_image">Pilih Gambar</string>
+    <string name="update">Update Profile</string>
 
     <string-array name="role">
         <item name="caleg">CALEG</item>
