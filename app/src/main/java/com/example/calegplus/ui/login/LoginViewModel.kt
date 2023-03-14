@@ -1,18 +1,14 @@
-package com.example.calegplus
+package com.example.calegplus.ui.login
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.calegplus.data.api.GetUserResponse
+import com.example.calegplus.DatastoreManager
 import com.example.calegplus.data.api.LoginRequest
 import com.example.calegplus.data.api.response.AuthResponse
 import com.example.calegplus.data.api.response.BaseResponse
-import com.example.calegplus.data.api.service.UserApi
 import com.example.calegplus.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
@@ -58,9 +54,15 @@ class LoginViewModel @Inject constructor (
             pref.saveUsername(username)
         }
     }
+    fun saveId(id: Int) {
+        viewModelScope.launch {
+            pref.saveId(id)
+        }
+    }
     fun getDataStoreUsername(): LiveData<String> {
         return pref.getUsername.asLiveData()
     }
+
     fun removeIsLoginStatus() {
         viewModelScope.launch {
             pref.removeIsLoginStatus()

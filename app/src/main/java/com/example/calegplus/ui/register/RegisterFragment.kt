@@ -1,10 +1,6 @@
-package com.example.calegplus
+package com.example.calegplus.ui.register
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,17 +10,13 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.calegplus.R
 import com.example.calegplus.data.api.response.*
-import com.example.calegplus.data.api.service.ApiClient
 import com.example.calegplus.data.api.service.RetrofitClient
-import com.example.calegplus.data.api.service.UserApi
-import com.example.calegplus.databinding.FragmentLoginBinding
 import com.example.calegplus.databinding.FragmentRegisterBinding
-import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 @AndroidEntryPoint
 class RegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {

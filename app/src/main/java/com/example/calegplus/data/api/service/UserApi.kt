@@ -18,6 +18,9 @@ interface UserApi {
     @POST("/auth/register")
     suspend fun registerUser(@Body registerRequest: RegisterRequest): Response<AuthResponse>
 
+    @GET("/auth/getbyid/{id}")
+    fun getUserProfile(@Path("id")id: Int): Call <GetUserResponse>
+
     @GET("/provinsi/getall/json")
     fun getProv(): Call<ProvinsiResponse>
 

@@ -31,6 +31,7 @@
     <string name="jenis_kelamin">Jenis Kelamin</string>
     <string name="select_image">Pilih Gambar</string>
     <string name="update">Update Profile</string>
+    <string name="areaKerja">Area Kerja</string>
 
     <string-array name="role">
         <item name="caleg">CALEG</item>

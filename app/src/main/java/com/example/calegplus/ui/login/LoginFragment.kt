@@ -1,4 +1,4 @@
-package com.example.calegplus
+package com.example.calegplus.ui.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.calegplus.R
 import com.example.calegplus.data.api.response.AuthResponse
 import com.example.calegplus.data.api.response.BaseResponse
 import com.example.calegplus.databinding.FragmentLoginBinding
@@ -73,6 +74,7 @@ class LoginFragment : Fragment() {
         showToast("Success:" + data?.message)
         viewModel.saveIsLoginStatus(true)
         viewModel.saveUsername(data?.data?.user?.username.toString())
+        viewModel.saveId(data?.data?.user?.id.toString().toInt())
         findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
     }
 

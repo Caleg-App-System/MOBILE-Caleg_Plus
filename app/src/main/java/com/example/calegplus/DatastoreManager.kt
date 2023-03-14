@@ -17,10 +17,18 @@ class DatastoreManager(@ApplicationContext val context: Context) {
     val getUsername: Flow<String> = context.dataStore.data.map {
         it[USERNAME_KEY] ?: ""
     }
+    val getId: Flow<Int> = context.dataStore.data.map {
+        it[ID_KEY] ?: 0
+    }
 
     suspend fun saveUsername(username: String) {
         context.dataStore.edit {
             it[USERNAME_KEY] = username
+        }
+    }
+    suspend fun saveId(id: Int) {
+        context.dataStore.edit {
+            it[ID_KEY] = id
         }
     }
     suspend fun saveIsLoginStatus(paramIsLogin: Boolean) {
@@ -42,6 +50,7 @@ class DatastoreManager(@ApplicationContext val context: Context) {
         private const val DATASTORE_NAME = "user_preferences"
         private val IS_LOGIN_KEY = booleanPreferencesKey("is_login_key")
         private val USERNAME_KEY = stringPreferencesKey("username_key")
+        private val ID_KEY = intPreferencesKey("id_key")
         private val Context.dataStore by preferencesDataStore(
             name = DATASTORE_NAME
         )

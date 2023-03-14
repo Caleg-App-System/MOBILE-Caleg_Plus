@@ -1,21 +1,15 @@
-package com.example.calegplus
+package com.example.calegplus.ui.register
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.*
-import com.example.calegplus.data.api.PostUserResponse
+import com.example.calegplus.DatastoreManager
 import com.example.calegplus.data.api.RegisterRequest
 import com.example.calegplus.data.api.response.AuthResponse
 import com.example.calegplus.data.api.response.BaseResponse
-import com.example.calegplus.data.api.response.Data
-import com.example.calegplus.data.api.response.ProvinsiResponse
 import com.example.calegplus.data.api.service.UserApi
 import com.example.calegplus.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel

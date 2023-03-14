@@ -1,4 +1,4 @@
-package com.example.calegplus
+package com.example.calegplus.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.calegplus.R
 import com.example.calegplus.databinding.FragmentHomeBinding
-import com.example.calegplus.databinding.FragmentRegisterBinding
+import com.example.calegplus.ui.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
