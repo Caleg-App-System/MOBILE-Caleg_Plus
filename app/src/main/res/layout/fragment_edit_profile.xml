@@ -61,27 +61,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:src="@drawable/ic_baseline_person_pin_24" />
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etJenisKelamin"
-                        style="@style/TextAppearance.MyApp.detail.text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/jenis_kelamin" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
                         android:src="@drawable/ic_baseline_home_work_24" />
 
                     <com.google.android.material.textfield.TextInputEditText

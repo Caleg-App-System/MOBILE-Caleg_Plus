@@ -43,6 +43,10 @@ class ProfileFragment : Fragment() {
                     areaKerja.text = it.data?.workingArea.toString()
                     etAddress.text = it.data?.address.toString()
                     etPhone.text = it.data?.phone?.toString()
+
+                    profileViewModel.saveName(it.data?.name.toString())
+                    it.data?.phone?.toString()?.let { it1 -> profileViewModel.savePhone(it1) }
+                    profileViewModel.saveAddress(it.data?.address.toString())
                 }
             }
         }
@@ -54,6 +58,8 @@ class ProfileFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             viewModel.removeIsLoginStatus()
             viewModel.removeUsername()
+            viewModel.removeToken()
+            viewModel.removeId()
             viewModel.getDataStoreIsLogin().observe(viewLifecycleOwner){
                 findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
             }

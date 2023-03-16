@@ -54,6 +54,11 @@ class LoginViewModel @Inject constructor (
             pref.saveUsername(username)
         }
     }
+    fun saveToken(token: String) {
+        viewModelScope.launch {
+            pref.saveToken(token)
+        }
+    }
     fun saveId(id: Int) {
         viewModelScope.launch {
             pref.saveId(id)
@@ -71,6 +76,16 @@ class LoginViewModel @Inject constructor (
     fun removeUsername() {
         viewModelScope.launch {
             pref.removeUsername()
+        }
+    }
+    fun removeToken() {
+        viewModelScope.launch {
+            pref.removeToken()
+        }
+    }
+    fun removeId() {
+        viewModelScope.launch {
+            pref.removeId()
         }
     }
 }

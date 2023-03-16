@@ -2,13 +2,12 @@ package com.example.calegplus.data.api.service
 
 import com.example.calegplus.data.api.LoginRequest
 import com.example.calegplus.data.api.RegisterRequest
+import com.example.calegplus.data.api.UpdateUserResponse
 import com.example.calegplus.data.api.response.*
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface UserApi {
 
@@ -19,7 +18,7 @@ interface UserApi {
     suspend fun registerUser(@Body registerRequest: RegisterRequest): Response<AuthResponse>
 
     @GET("/auth/getbyid/{id}")
-    fun getUserProfile(@Path("id")id: Int): Call <GetUserResponse>
+    fun getUserProfile(@Path("id") id: Int): Call<GetUserResponse>
 
     @GET("/provinsi/getall/json")
     fun getProv(): Call<ProvinsiResponse>
@@ -32,4 +31,14 @@ interface UserApi {
 
     @GET("desa/get/{id}")
     fun getDesa(@Path("id") id: String): Call<DesaResponse>
+
+    @Multipart
+    @PUT("/update/profile")
+    fun updateUser(
+        @Part("name") name: RequestBody,
+        @Part("phone")phone: RequestBody,
+        @Part("address")address: RequestBody,
+        @Header("Authorization") token: String
+    ): Call<UpdateUserResponse>
+
 }

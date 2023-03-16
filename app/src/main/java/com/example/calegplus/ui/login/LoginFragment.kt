@@ -75,6 +75,7 @@ class LoginFragment : Fragment() {
         viewModel.saveIsLoginStatus(true)
         viewModel.saveUsername(data?.data?.user?.username.toString())
         viewModel.saveId(data?.data?.user?.id.toString().toInt())
+        viewModel.saveToken(data?.token.toString())
         findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
     }
 

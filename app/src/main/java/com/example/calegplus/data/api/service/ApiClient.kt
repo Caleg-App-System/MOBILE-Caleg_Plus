@@ -17,7 +17,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object ApiClient {
 
-    val BASE_URL = "https://caleg-plus.up.railway.app"
+    val BASE_URL = "http://be.bitingku.com"
 
     @Singleton
     @Provides
