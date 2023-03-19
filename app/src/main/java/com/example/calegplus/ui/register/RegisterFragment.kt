@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.calegplus.R
@@ -63,7 +64,7 @@ class RegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.login.setOnClickListener() {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
-        binding.btnRegister.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             val username = binding.username.text.toString()
             val name = binding.namaLengkap.text.toString()
             val email = binding.email.text.toString()
@@ -89,7 +90,15 @@ class RegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 binding.cPassword.error = "Password harus sama"
             }
             if (pwd == confPwd) {
-                viewModel.registerUser(username, email, pwd, role, address, name)
+                val bundle = bundleOf(
+                    "username" to username,
+                    "email" to email,
+                    "name" to name,
+                    "pwd" to pwd,
+                    "address" to address,
+                    "role" to role,
+                )
+                findNavController().navigate(R.id.action_registerFragment_to_register2Fragment, bundle)
             }
         }
 
@@ -230,17 +239,17 @@ class RegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     fun processLogin(data: AuthResponse?) {
-        showToast("Success:" + data?.message)
+        showToast("Success:" + data?.message, "Success")
         findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
     }
 
     fun processError(msg: String?) {
-        showToast("$msg")
+        showToast("$msg", "Error")
     }
 
-    fun showToast(msg: String) {
+    fun showToast(msg: String, status: String) {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Error")
+        builder.setTitle(status)
         builder.setMessage(msg)
 
         builder.setPositiveButton("OK") { dialog, which ->

@@ -32,6 +32,12 @@
     <string name="select_image">Pilih Gambar</string>
     <string name="update">Update Profile</string>
     <string name="areaKerja">Area Kerja</string>
+    <string name="inputNik">Masukkan NIK</string>
+    <string name="inputKK">Masukkan KK</string>
+    <string name="inputAreaKerja">Masukkan Area Kerja</string>
+    <string name="inputKTP">Upload Foto KTP</string>
+    <string name="inputNoHp">Masukkan Nomor Hp</string>
+    <string name="next">Next</string>
 
     <string-array name="role">
         <item name="caleg">CALEG</item>

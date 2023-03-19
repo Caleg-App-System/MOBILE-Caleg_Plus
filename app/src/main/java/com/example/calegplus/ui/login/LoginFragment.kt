@@ -72,7 +72,7 @@ class LoginFragment : Fragment() {
     }
 
     fun processLogin(data: AuthResponse?) {
-        showToast("Success:" + data?.message)
+        showToast("Success:" + data?.message, "Success")
         viewModel.saveIsLoginStatus(true)
         viewModel.saveUsername(data?.data?.user?.username.toString())
         viewModel.saveId(data?.data?.user?.id.toString().toInt())
@@ -81,13 +81,13 @@ class LoginFragment : Fragment() {
     }
 
     fun processError(msg: String?) {
-        showToast("$msg")
+        showToast("$msg", "Error")
     }
 
-    fun showToast(msg: String) {
+    fun showToast(msg: String, status: String) {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Error")
-        builder.setMessage("$msg")
+        builder.setTitle(status)
+        builder.setMessage(msg)
 
         builder.setPositiveButton("OK") { dialog, which ->
             Toast.makeText(requireContext(),

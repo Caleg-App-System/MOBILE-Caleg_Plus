@@ -20,7 +20,7 @@ class RegisterViewModel @Inject constructor(
     application: Application
 ) : AndroidViewModel(application) {
     val registerResult: MutableLiveData<BaseResponse<AuthResponse>> = MutableLiveData()
-    fun registerUser(username: String, email: String, pwd: String, role: String, address: String, name: String) {
+    fun registerUser(username: String?, email: String?, pwd: String?, role: String?, address: String?, name: String?) {
         registerResult.value = BaseResponse.Loading()
         viewModelScope.launch {
             try {
