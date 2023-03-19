@@ -1,5 +1,6 @@
 package com.example.calegplus.ui.register
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -238,11 +239,17 @@ class RegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     fun showToast(msg: String) {
-        Toast.makeText(
-            requireContext(),
-            msg,
-            Toast.LENGTH_SHORT
-        ).show()
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Error")
+        builder.setMessage(msg)
+
+        builder.setPositiveButton("OK") { dialog, which ->
+            Toast.makeText(requireContext(),
+                android.R.string.yes, Toast.LENGTH_SHORT).show()
+
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {

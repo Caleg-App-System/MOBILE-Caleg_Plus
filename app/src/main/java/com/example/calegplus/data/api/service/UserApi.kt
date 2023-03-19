@@ -32,13 +32,7 @@ interface UserApi {
     @GET("desa/get/{id}")
     fun getDesa(@Path("id") id: String): Call<DesaResponse>
 
-    @Multipart
     @PUT("/update/profile")
-    fun updateUser(
-        @Part("name") name: RequestBody,
-        @Part("phone")phone: RequestBody,
-        @Part("address")address: RequestBody,
-        @Header("Authorization") token: String
-    ): Call<UpdateUserResponse>
+    fun updateUser(@Body request : UpdateUserResponse, @Header("Authorization") token: String): Call<UpdateUserResponse>
 
 }

@@ -47,13 +47,13 @@ class ProfileViewModel @Inject constructor(
 
 
     fun updateUser(
-        name: RequestBody,
-        phone: RequestBody,
-        address: RequestBody,
+        name: String,
+        phone: String,
+        address: String,
         token: String
     ){
-        client.updateUser(name, phone, address, token)
-            .enqueue(object : retrofit2.Callback<UpdateUserResponse> {
+        client.updateUser(UpdateUserResponse(name, phone, address), token)
+            .enqueue(object : Callback<UpdateUserResponse> {
                 override fun onResponse(
                     call: Call<UpdateUserResponse>,
                     response: Response<UpdateUserResponse>
@@ -94,7 +94,7 @@ class ProfileViewModel @Inject constructor(
         return pref.getPhone.asLiveData()
     }
     fun getDataStoreAddress(): LiveData<String> {
-        return pref.getToken.asLiveData()
+        return pref.getAddress.asLiveData()
     }
 
     fun getDataStoreToken(): LiveData<String> {

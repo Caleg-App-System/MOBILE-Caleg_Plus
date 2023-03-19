@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.calegplus.R
+import com.example.calegplus.data.api.UpdateUserResponse
 import com.example.calegplus.data.api.response.DesaResponse
 import com.example.calegplus.data.api.response.KabupatenResponse
 import com.example.calegplus.data.api.response.KecamatanResponse
@@ -43,11 +44,11 @@ class EditProfileFragment : Fragment() {
 
         binding.btnUpdate.setOnClickListener {
 
-            val name = binding.etUserName.text.toString().toRequestBody("multipart/form-data".toMediaType())
-            val phone = binding.etPhone.text.toString().toRequestBody("multipart/form-data".toMediaType())
-            val address = binding.etAddress.text.toString().toUpperCase().toRequestBody("multipart/form-data".toMediaType())
+            val name = binding.etUserName.text.toString()
+            val phone = binding.etPhone.text.toString()
+            val address = binding.etAddress.text.toString().toUpperCase()
             profileViewModel.getDataStoreToken().observe(viewLifecycleOwner){
-                profileViewModel.updateUser(name, phone, address, "Bearer $it")
+                profileViewModel.updateUser(name,phone,address, "Bearer $it")
             }
             Toast.makeText(requireContext(), "Update Success", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_editProfileFragment_to_profileFragment)
